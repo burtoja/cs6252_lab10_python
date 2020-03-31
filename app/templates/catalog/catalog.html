@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <aside>
+        <h1>Categories</h1>
+        <nav>
+        <ul>
+        	{% for category in categories %}
+            <li>
+            <a href="{{ url_for('catalog.home', category_id=category.category_id) }}">
+                {{ category.category_name }}
+            </a>
+            </li>
+        	{% endfor %}
+        </ul>
+        </nav>
+    </aside>
+    <section>
+        <h1>{{ category_name }}</h1>
+        <nav>
+        <ul>
+            <!-- display links for products in selected category -->
+            {% for product in products %}
+            <li>
+                <a href="{{ url_for('catalog.product', product_id=product.product_id) }}">
+                    {{ product.product_name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        </nav>
+    </section>
+</main>
+{% endblock %}

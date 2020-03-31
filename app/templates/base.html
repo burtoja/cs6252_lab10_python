@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<!-- the head section -->
+<head>
+    <title>My Bakery</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<!-- the body section -->
+<body>
+<header><h1>My Bakery</h1></header>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <p class="copyright">
+        &copy; 2020 My Bakery, Inc.
+    </p>
+</footer>
+</body>
+</html>

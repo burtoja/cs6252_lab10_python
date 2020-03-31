@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <aside>
+        <h1>Categories</h1>
+        <nav>
+            <ul>
+                <!-- display links for all categories -->
+                {% for category in categories %}
+                <li>
+                    <a href="{{ url_for('catalog.home', category_id=category.category_id) }}">
+                        {{ category.category_name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </aside>
+    <section>
+    	{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="error"><p>
+					{{ messages[0] }}
+				</p></div>
+			{% else %}
+				<h1>{{ product.product_name }}</h1>
+		        <div id="right_column">
+		            <p><b>Price:</b> ${{ product.price }}</p>
+		            <form action="{{ url_for('home.index') }}" method="post">
+		                <input type="hidden" name="product_id" value="{{ product.product_id }}">
+		                <b>Quantity:</b>
+		                <input id="quantity" type="number" name="quantity" value="1" size="2">
+		                <br><br>
+		                <input type="submit" value="Add to Cart">
+		            </form>
+		        </div>
+		    {% endif %} 
+		{% endwith %}
+    
+    </section>
+</main>
+{% endblock %}

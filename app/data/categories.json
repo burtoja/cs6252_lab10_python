@@ -1,0 +1,16 @@
+{
+	"categories": [
+		{
+			"category_id": 1,
+			"category_name": "Breads"
+		},
+		{
+			"category_id": 2,
+			"category_name": "Rolls"
+		},
+		{
+			"category_id": 3,
+			"category_name": "Pastries"
+		}
+	]
+}

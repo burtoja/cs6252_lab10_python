@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Product List</h1>
+
+    <aside>
+        <!-- display a list of categories -->
+        <h2>Categories</h2>
+        <nav>
+        <ul>
+        {% for category in categories %}
+            <li>
+            <a href="{{ url_for('admin.home', category_id=category.category_id) }}">
+                {{ category.category_name }}
+            </a>
+            </li>
+        {% endfor %}
+        </ul>
+        </nav>
+    </aside>
+
+    <section>
+        <!-- display a table of products -->
+        <h2> {{ category_name }} </h2>
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th class="right">Price</th>
+                <th>&nbsp;</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.product_code }}</td>
+                <td>{{ product.product_name }}</td>
+                <td class="right">{{ product.price }}</td>
+                <td>
+                	<form action="{{ url_for('admin.delete_product') }}" method="post">
+	                    <input type="hidden" name="product_id" value="{{ product.product_id }}">
+	                    <input type="hidden" name="category_id" value="{{ product.category_id }}">
+	                    <input type="submit" value="Delete">
+                	</form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="error">
+					{{ messages[0] }}
+				</div>
+			{% endif %} 
+		{% endwith %}
+        <p class="last_paragraph">
+            <a href="{{ url_for('admin.add_product_form') }}">Add Product</a>
+        </p>
+    </section>
+</main>
+{% endblock %}

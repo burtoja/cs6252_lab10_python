@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Menu</h1>
+    <ul>
+        <li>
+            <a href="{{ url_for('admin.home') }}">Product Manager</a>
+        </li>
+        <li>
+            <a href="{{ url_for('catalog.home') }}">Product Catalog</a>
+        </li>
+    </ul>
+</main>
+{% endblock %}

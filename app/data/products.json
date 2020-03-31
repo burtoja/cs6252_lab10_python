@@ -1,0 +1,74 @@
+{
+	"products": [
+		{
+			"product_id": 1,
+			"category_id": 1,
+			"product_code": "RyeBr",
+			"product_name": "Rustic Rye Bread",
+			"price": 2.99
+		},
+		{
+			"product_id": 2,
+			"category_id": 1,
+			"product_code": "WWBr",
+			"product_name": "Whole Wheat Bread",
+			"price": 3.49
+		},
+		{
+			"product_id": 3,
+			"category_id": 1,
+			"product_code": "SrdBr",
+			"product_name": "Sourdough Bread",
+			"price": 3.49
+		},
+		{
+			"product_id": 4,
+			"category_id": 1,
+			"product_code": "mltB",
+			"product_name": "Multigrain Bread",
+			"price": 3.89
+		},
+		{
+			"product_id": 5,
+			"category_id": 1,
+			"product_code": "SndBr",
+			"product_name": "Sandwich Bread",
+			"price": 2.49
+		},
+		{
+			"product_id": 6,
+			"category_id": 1,
+			"product_code": "BrgBr",
+			"product_name": "Barguette",
+			"price": 1.99
+		},
+		{
+			"product_id": 7,
+			"category_id": 2,
+			"product_code": "PlnRo",
+			"product_name": "Plain Wheat Rolls",
+			"price": 0.59
+		},
+		{
+			"product_id": 8,
+			"category_id": 2,
+			"product_code": "SsmRo",
+			"product_name": "Sesame Rolls",
+			"price": 0.69
+		},
+		{
+			"product_id": 9,
+			"category_id": 3,
+			"product_code": "BCPa",
+			"product_name": "Bear Claw",
+			"price": 1.49
+		},
+		{
+			"product_id": 10,
+			"category_id": 3,
+			"product_code": "ChrPa",
+			"product_name": "Cherry Pie",
+			"price": 1.99
+		}
+	]
+}

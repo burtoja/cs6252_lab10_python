@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Add Product</h1>
+    
+    {% with messages = get_flashed_messages() %}
+		{% if messages %}
+				<div class="error">
+					{{ messages[0] }}
+				</div>
+		{% endif %} 
+	{% endwith %}
+		
+    <form method="POST" action="{{ url_for('admin.add_product') }}" id="add_product_form">
+
+        <label>Category:</label>
+        <select name="category_id">
+        {% for category in categories %}
+            <option value="{{ category.category_id }}">
+                {{ category.category_name }}
+            </option>
+        {% endfor %}
+        </select>
+        <br>
+
+        <label>Code:</label>
+        <input type="text" name="code" />
+        <br>
+
+        <label>Name:</label>
+        <input type="text" name="name" />
+        <br>
+
+        <label>List Price:</label>
+        <input type="text" name="price" />
+        <br>
+
+        <label>&nbsp;</label>
+        <input type="submit" value="Add Product" />
+        <br>
+    </form>
+    <p class="last_paragraph">
+        <a href="{{ url_for('admin.home') }}">View Product List</a>
+    </p>
+</main>
+{% endblock %}
