@@ -18,14 +18,14 @@
             {% for item in cart %}
             <tr>
                 <td>{{ item.product_name }}</td>
-                <td>{{ item.unit_price }}</td>
+                <td>{{ "$%.2f"|format(item.unit_price) }}</td>
                 <td>
                 	<form action="{{ url_for('admin.delete_product') }}" method="post">
                 		<input type="number" value="{{ item.quantity }}">
                 		<input type="submit" value="Update">
                 	</form>
 				</td>
-				<td>{{ item.total_price }}</td>
+				<td>{{ "$%.2f"|format(item.total_price) }}</td>
             </tr>
             {% endfor %}
         </table>
