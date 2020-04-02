@@ -20,8 +20,9 @@
                 <td>{{ item.product_name }}</td>
                 <td>{{ "$%.2f"|format(item.unit_price) }}</td>
                 <td>
-                	<form action="{{ url_for('admin.delete_product') }}" method="post">
-                		<input type="number" value="{{ item.quantity }}">
+                	<form action="{{ url_for('cart.update_cart') }}" method="post">
+                		<input type="number" name="quantity" value="{{ item.quantity }}">
+                		<input type="hidden" name="product_id" value="{{ item.product_id }}">
                 		<input type="submit" value="Update">
                 	</form>
 				</td>
