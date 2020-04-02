@@ -5,7 +5,6 @@ Created on Mar 16, 2020
 '''
 from flask import Blueprint, render_template, request, flash
 from . import db
-from app.model.cartitem import CartItem
 
 catalog = Blueprint('catalog', __name__, url_prefix="/catalog", template_folder='templates/catalog')
 
@@ -37,18 +36,5 @@ def product():
     
     return render_template('product.html', categories=categories, product=product)
 
-@catalog.route('/cart')
-def cart():
-    cart_items = db.order.get_items()
-    cart = []
-    for item in cart_items:
-        product_id = item.product_id
-        product_name = db.products.get_product(product_id).product_name
-        quantity = item.quantity
-        unit_price = db.products.get_product(product_id).price
-        total_price = unit_price * quantity       
-        cart_item = CartItem(product_id, product_name, quantity, unit_price, total_price)
-        cart.append(cart_item)
 
-    return render_template('cart.html', cart=cart)
 

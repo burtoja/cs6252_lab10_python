@@ -15,5 +15,8 @@ def create_app():
     
     from .catalog import catalog as catalog_blueprint
     app.register_blueprint(catalog_blueprint)
+    
+    from .cart import cart as cart_blueprint
+    app.register_blueprint(cart_blueprint)
 
     return app
