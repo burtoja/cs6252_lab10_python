@@ -1,16 +1,1 @@
-{
-	"order": [
-		{
-			"product_id": 7,
-			"quantity": 25
-		},
-		{
-			"product_id": 6,
-			"quantity": 6
-		},
-		{
-			"product_id": 5,
-			"quantity": 1
-		}
-	]
-}
+{"order": [{"product_id": 7, "quantity": 27}, {"product_id": 6, "quantity": 6}, {"product_id": 5, "quantity": 1}, {"product_id": 11, "quantity": 1}, {"product_id": 8, "quantity": 20}]}

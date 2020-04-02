@@ -27,7 +27,7 @@
 				<h1>{{ product.product_name }}</h1>
 		        <div id="right_column">
 		            <p><b>Price:</b> ${{ product.price }}</p>
-		            <form action="{{ url_for('home.index') }}" method="post">
+		            <form action="{{ url_for('catalog.add_product_to_cart') }}" method="post">
 		                <input type="hidden" name="product_id" value="{{ product.product_id }}">
 		                <b>Quantity:</b>
 		                <input id="quantity" type="number" name="quantity" value="1" size="2">
