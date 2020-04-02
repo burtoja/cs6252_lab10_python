@@ -69,6 +69,13 @@
 			"product_code": "ChrPa",
 			"product_name": "Cherry Pie",
 			"price": 1.99
+		},
+		{
+			"product_id": 11,
+			"category_id": 3,
+			"product_code": "LD55",
+			"product_name": "Little Debbie",
+			"price": 2.99
 		}
 	]
 }

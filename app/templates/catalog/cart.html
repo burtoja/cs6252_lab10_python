@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Your Cart</h1>
+    
+    <p>To remove an item from your cart, change its quantity to 0.</p>
+
+    <section>
+        <!-- display a table of products -->
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.product_name }}</td>
+                <td>{{ item.unit_price }}</td>
+                <td>
+                	<form action="{{ url_for('admin.delete_product') }}" method="post">
+                		<input type="number" value="{{ item.quantity }}">
+                		<input type="submit" value="Update">
+                	</form>
+				</td>
+				<td>{{ item.total_price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p class="last_paragraph">
+            Return to <a href="{{ url_for('catalog.product') }}">Catalog</a>
+        </p>
+    </section>
+</main>
+{% endblock %}
